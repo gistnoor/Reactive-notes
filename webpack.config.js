@@ -1,5 +1,3 @@
-'use strict';
-
 var webpack           = require('webpack');
 var path              = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -19,9 +17,7 @@ module.exports = {
                 test: /\.(js|jsx|es6)?$/,
                 exclude: [
                     path.resolve(__dirname, 'node_modules'),
-                    path.resolve(__dirname, 'diagram'),
-                    path.resolve(__dirname, 'examples'),
-                    path.resolve(__dirname, 'assets')
+                    path.resolve(__dirname, 'dump')
                 ],
                 loader: 'babel-loader',
                 include: [
