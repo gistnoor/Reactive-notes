@@ -7,7 +7,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     // context: __dirname + 'src/',
     entry: [
-         './src/app/index.jsx',
+         './src/app/index.js',
         'webpack-dev-server/client?http://localhost:8080',
         'webpack/hot/only-dev-server',
     ],
@@ -17,9 +17,10 @@ module.exports = {
                 test: /\.(js|jsx|es6)?$/,
                 exclude: [
                     path.resolve(__dirname, 'node_modules'),
-                    path.resolve(__dirname, 'dump')
+                    path.resolve(__dirname, 'dump'),
+                    path.resolve(__dirname, 'test'),
                 ],
-                loader: 'babel-loader',
+                loader: 'babel',
                 include: [
                     path.resolve(__dirname, "src"),
                     ],

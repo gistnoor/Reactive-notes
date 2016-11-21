@@ -1,10 +1,17 @@
-.notespan {
-	color: '#ffaaaa';
+.notes {
+    margin-top: 50px;
 }
-.first-list {
-	padding-left: 0;
+.notespan {
+    color: '#ffaaaa';
+}
+ul.note-lists {
+    padding-left: 0;
 }
 
 .headersection {
-	margin-top: 100px;
+    margin-top: 100px;
+}
+
+button.onright{
+    float: right;
 }
