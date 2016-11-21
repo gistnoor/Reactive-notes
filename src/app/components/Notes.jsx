@@ -3,8 +3,8 @@ import AddNoteItem from './AddNoteItem';
 import NoteList from './NoteList';
 
 export default class Notes extends React.Component{
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		this.state = {
 			note: {}
 		};
@@ -38,16 +38,18 @@ export default class Notes extends React.Component{
 	render() {
 		const notes = this.state.note;
 		return (
-			<div className="container">
-				<div className="row">
-					<div className="col-sm-6">
-						<AddNoteItem addNoteItem={this.addNoteItem} />
-					</div>
-					<div className="col-sm-6">
-						<NoteList 
-							notes={notes}
-							deleteNote={this.deleteNote}
-							deleteAllNote={this.deleteAllNote} />
+			<div className="notes">
+				<div className="container">
+					<div className="row">
+						<div className="col-md-6">
+							<AddNoteItem addNoteItem={this.addNoteItem} />
+						</div>
+						<div className="col-md-6">
+							<NoteList 
+								notes={notes}
+								deleteNote={this.deleteNote}
+								deleteAllNote={this.deleteAllNote} />
+						</div>
 					</div>
 				</div>
 			</div>

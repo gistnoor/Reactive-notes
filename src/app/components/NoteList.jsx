@@ -30,7 +30,7 @@ export default class NoteList extends React.Component{
 				<h3 className="page-header">
 					<NoteHeader deleteAllNote={deleteAllNote} />
 				</h3>
-				<ul>
+				<ul className="note-lists">
 					{noteItemElement.length > 0 ? noteItemElement : <EmptyNote />}
 				</ul>
 			</div>

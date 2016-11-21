@@ -31,12 +31,10 @@ export default class AddNoteItem extends React.Component{
 					<label htmlFor="noteId">
 						Note Title <span className="notespan">*</span>
 					</label>
-					<input type="text" 
-						className="form-control" 
+					<input type="text"						className="form-control"
 						id="noteId" 
 						placeholder="Note Title"
-						required
-						ref="name" />
+						required ref="name" />
 				</div>
 				<div className="form-group">
 					<label htmlFor="noteDescription">
@@ -46,8 +44,7 @@ export default class AddNoteItem extends React.Component{
 						id="noteDescription" 
 						rows="15" 
 						placeholder="Enter note Description"
-						required
-						ref="description">
+						required ref="description">
 					</textarea>
 				</div>
 				<div className="form-group">

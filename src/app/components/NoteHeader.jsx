@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 
 export default class NoteHeader extends React.Component{
 	constructor() {
@@ -16,11 +15,12 @@ export default class NoteHeader extends React.Component{
 	}
 
 	render() {
-		const deleteAllButton = classNames('btn', 'btn-xs', 'btn-danger');
-		return(				
+
+		return(
 			<form onSubmit={this.handleSubmit} className="form-inline">
-				<button className={deleteAllButton} type="submit">Delete all</button>
+				<button className="btn btn-xs btn-danger" type="submit">Delete all</button>
 			</form>
 		);
 	}
 }
+
