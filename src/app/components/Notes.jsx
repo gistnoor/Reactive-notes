@@ -1,6 +1,6 @@
 import React from 'react';
-import AddNoteItem from './AddNoteItem';
 import NoteList from './NoteList';
+import AddNoteItem from './AddNoteItem';
 
 export default class Notes extends React.Component{
 	constructor() {
