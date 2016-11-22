@@ -26,6 +26,11 @@ export default class AddNoteItem extends React.Component{
 		};
 
 		this.props.addNoteItem(note);
+
+		this.setState({
+			previewText: '',
+			previewTitle: ''
+		});
 	}
 
 	previewText(e) {
@@ -49,12 +54,12 @@ export default class AddNoteItem extends React.Component{
                         Note Title <span className="notespan">*</span>
                     </label>
       
-                 <input ref='name' className="form-control" type="text" onChange={this.previewTitle} placeholder="Enter Title" />
+                 <input value={this.state.previewTitle} ref='name' className="form-control" type="text" onChange={this.previewTitle} placeholder="Enter Title" />
 
                 </div>
 				<div className="form-group">
 		        	<label htmlFor="noteDescription">Description</label>
-		        	 <textarea id="noteDescription" onChange={this.previewText}  className="form-control" rows="15" ref="description" name="description" type="text" placeholder="Enter note description"></textarea>
+		        	 <textarea id="noteDescription" onChange={this.previewText} value={this.state.previewText} className="form-control" rows="15" ref="description" name="description" type="text" placeholder="Enter note description"></textarea>
 	        	</div>
 				<div className="form-group">
                     <label htmlFor="noteTags">
