@@ -1,6 +1,7 @@
 import React from 'react';
-import TextShow from './tweaks/textarea/TextShow';
 import uuid from 'node-uuid';
+
+import TextShow from './tweaks/textarea/TextShow';
 export default class AddNoteItem extends React.Component{
 	constructor() {
 		super();
@@ -78,6 +79,7 @@ export default class AddNoteItem extends React.Component{
 				<button className="btn btn-primary" type="submit">Submit</button>
 				<button className="btn btn-link" type="reset">Cancel</button>
 			</form>
+
 		);
 	}
 }

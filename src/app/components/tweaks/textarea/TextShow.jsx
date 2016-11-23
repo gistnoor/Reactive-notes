@@ -4,16 +4,33 @@ export default class TextShow extends React.Component {
     constructor() {
         super();
         this.state = {
-            show: false
+            show: false,
+            text: '',
+            title: '',
+            titleError: ''
         };
         this.showMyNote = this.showMyNote.bind(this);
         this.hideMyNote = this.hideMyNote.bind(this);
     }
 
-    showMyNote() {
+    showMyNote(e) {
+        const showdown = require('showdown');
+        const converter = new showdown.Converter();
+        const mytext = converter.makeHtml(this.props.text);
+        const myTitle = this.props.title;
         this.setState({
-            show: true
-        });
+            show: true,
+            text: mytext,
+            title: myTitle
+        }, () => this.validateText());
+    }
+
+    validateText() {
+        if (this.title.length === 0) {
+            this.setState({         
+                titleError: "Title can't be blank"
+            });
+        }
     }
 
     hideMyNote() {
@@ -23,6 +40,9 @@ export default class TextShow extends React.Component {
     }
 
     render() {
+       /* const markdown = {this.state.text} > 0 ? {this.stat.text} : {this.state.titleError};*/
+       const showText = this.state.text;
+
         return(
             <ButtonToolbar>
                 <Button bsStyle="primary" onClick={this.showMyNote}>
@@ -38,12 +58,12 @@ export default class TextShow extends React.Component {
                 >
                     <Modal.Header closeButton>
                         <Modal.Title id="contained-modal-title-lg">
-                            {this.props.title}
+                            {this.state.title}
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <p className="text-area-show">
-                            {this.props.text}
+                            {showText}
                         </p>
                     </Modal.Body>
                     <Modal.Footer>
