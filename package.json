@@ -10,6 +10,7 @@
   "author": "Noor <gist.asifhasannoor@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "mytest": "webpack -p --config ./dump/webpack.config.babel.js",
     "start": "webpack-dev-server --progress --color --hot --inline",
     "test": "mocha --compilers js:babel-core/register --require ./test/setup.js 'test/**/*.@(js|jsx)'",
     "test:watch": "yarn run test -- --watch --watch-extensions jsx"
@@ -33,12 +34,15 @@
     "html-webpack-plugin": "^2.24.1",
     "node-uuid": "^1.4.7",
     "react": "^15.4.0",
+    "react-addons-create-fragment": "^15.4.1",
     "react-addons-test-utils": "^15.4.0",
     "react-bootstrap": "^0.30.6",
     "react-dom": "^15.4.0",
     "react-hot-loader": "^3.0.0-beta.6",
+    "react-paginate": "^2.2.3",
     "react-redux": "^4.4.6",
     "redux": "^3.6.0",
+    "showdown": "^1.5.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.3",
     "webpack-dev-middleware": "^1.8.4",

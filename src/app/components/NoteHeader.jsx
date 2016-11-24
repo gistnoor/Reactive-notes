@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button, OverlayTrigger, Tooltip} from 'react-bootstrap';
 
 export default class NoteHeader extends React.Component{
 	constructor() {
@@ -15,10 +16,14 @@ export default class NoteHeader extends React.Component{
 	}
 
 	render() {
-
+		const tooltip = (
+	<Tooltip id="tooltip">All notes will be <strong>deleted</strong> !!!.</Tooltip>
+			);
 		return(
 			<form onSubmit={this.handleSubmit} className="form-inline">
-				<button className="btn btn-xs btn-danger" type="submit">Delete all</button>
+				<OverlayTrigger placement="right" overlay={tooltip}>
+					<Button type="submit" bsSize="xsmall" bsStyle="danger">Delete</Button>
+				</OverlayTrigger>
 			</form>
 		);
 	}

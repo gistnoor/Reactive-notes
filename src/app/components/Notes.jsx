@@ -2,6 +2,8 @@ import React from 'react';
 import NoteList from './NoteList';
 import AddNoteItem from './AddNoteItem';
 
+import Pagination from './tweaks/note/Pagination';
+
 export default class Notes extends React.Component{
 	constructor() {
 		super();
@@ -49,6 +51,7 @@ export default class Notes extends React.Component{
 								notes={notes}
 								deleteNote={this.deleteNote}
 								deleteAllNote={this.deleteAllNote} />
+							<Pagination notes={this.state.note} perPage={3}/>
 						</div>
 					</div>
 				</div>

@@ -41,9 +41,11 @@ export default class TextShow extends React.Component {
 
     render() {
        /* const markdown = {this.state.text} > 0 ? {this.stat.text} : {this.state.titleError};*/
+ 
        const showText = this.state.text;
 
         return(
+           
             <ButtonToolbar>
                 <Button bsStyle="primary" onClick={this.showMyNote}>
                     Preview
@@ -71,6 +73,9 @@ export default class TextShow extends React.Component {
                     </Modal.Footer>              
                 </Modal>
             </ButtonToolbar>
+
+
+
 
         );
     }

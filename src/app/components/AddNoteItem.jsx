@@ -55,12 +55,12 @@ export default class AddNoteItem extends React.Component{
                         Note Title <span className="notespan">*</span>
                     </label>
       
-                 <input value={this.state.previewTitle} ref='name' className="form-control" type="text" onChange={this.previewTitle} placeholder="Enter Title" />
+                 <input value={this.state.previewTitle} ref='name' className="form-control" type="text" onChange={this.previewTitle} placeholder="Enter Title" required />
 
                 </div>
 				<div className="form-group">
 		        	<label htmlFor="noteDescription">Description</label>
-		        	 <textarea id="noteDescription" onChange={this.previewText} value={this.state.previewText} className="form-control" rows="15" ref="description" name="description" type="text" placeholder="Enter note description"></textarea>
+		        	 <textarea id="noteDescription" onChange={this.previewText} value={this.state.previewText} className="form-control" rows="15" ref="description" name="description" type="text" placeholder="Enter note description" required></textarea>
 	        	</div>
 				<div className="form-group">
                     <label htmlFor="noteTags">
@@ -78,8 +78,8 @@ export default class AddNoteItem extends React.Component{
 				<br/>
 				<button className="btn btn-primary" type="submit">Submit</button>
 				<button className="btn btn-link" type="reset">Cancel</button>
-			</form>
-
+                
+            </form>
 		);
 	}
 }

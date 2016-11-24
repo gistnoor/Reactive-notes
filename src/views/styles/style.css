@@ -23,3 +23,7 @@ button.onright{
     flex-wrap: wrap;
 }
 
+#tooltip {
+    margin-left: 5px;
+}
+

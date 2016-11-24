@@ -1,5 +1,5 @@
 import React from 'react';
-import {Panel, PanelGroup, Button} from 'react-bootstrap';
+import {Panel, PanelGroup, Button, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import NoteDescription from './NoteDescription';
 
 export default class NoteItem extends React.Component{
@@ -31,6 +31,9 @@ export default class NoteItem extends React.Component{
 	render() {
 		const {note} = this.props;
 		const showHide = this.state.open ? 'Hide' : 'Show';
+		const tooltip = (
+			<Tooltip id="tooltip">Your note will be <strong>deleted</strong> permanently.</Tooltip>
+			);
 		return(
 			<div className="panel panel-info">
 				
@@ -47,12 +50,15 @@ export default class NoteItem extends React.Component{
 						{note.description.length > 0 ? <NoteDescription description={note.description} /> : '' } 
 					</Panel>
 					<hr/>
-					<Panel bsStyle="danger" footer="You sure about that?">
-						<form className="form-inline" onSubmit={this.handleSubmit}>
+					
+					<form className="form-inline" onSubmit={this.handleSubmit}>
+					    <OverlayTrigger placement="right" overlay={tooltip}>
 							<Button type="submit" bsSize="xsmall" bsStyle="warning">Delete</Button>
-						</form>
-					</Panel>
+						</OverlayTrigger>
+					</form>
+
 				</PanelGroup>
+				
 			</div>
 		);
 	}

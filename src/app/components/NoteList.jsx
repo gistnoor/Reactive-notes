@@ -1,9 +1,15 @@
 import React from 'react';
+
 import NoteItem from './NoteItem';
 import NoteHeader from './NoteHeader';
-import EmptyNote from './EmptyNote';
+import EmptyNote from './tweaks/note/EmptyNote';
+
 
 export default class NoteList extends React.Component{
+	constructor(props) {
+		super(props);
+
+	}
 
 	getNotesId(notes) {
 		return Object.keys(notes);
@@ -22,6 +28,7 @@ export default class NoteList extends React.Component{
 	}
 
 
+
 	render() {
 		const {notes, deleteAllNote} = this.props;
 		const noteItemElement = this.createNoteElements(notes);
@@ -33,6 +40,8 @@ export default class NoteList extends React.Component{
 				<ul className="note-lists">
 					{noteItemElement.length > 0 ? noteItemElement : <EmptyNote />}
 				</ul>
+
+
 			</div>
 		);
 	}
